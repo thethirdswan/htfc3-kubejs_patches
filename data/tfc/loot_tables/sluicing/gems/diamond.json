@@ -10,7 +10,7 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "kubejs:clean_gem_dust/diamond"
+              "name": "createaddition:diamond_grit"
             },
             {
               "type": "minecraft:item",
