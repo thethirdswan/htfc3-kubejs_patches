@@ -28,6 +28,8 @@ onEvent('jei.hide.fluids', event => {
 })
 onEvent('jei.hide.items', event => {
 	event.hide([
+	    Item.of('tconstruct:potion_bucket').ignoreNBT(),
+	    Item.of('immersiveengineering:potion_bucket').ignoreNBT(),
 		'createoreexcavation:raw_diamond',
 		'createoreexcavation:raw_emerald',
 		'createoreexcavation:raw_redstone',
@@ -47,7 +49,6 @@ onEvent('jei.hide.items', event => {
 		'firmalife:ice_fishing_station',
 		'kubejs:raw_platinum',
 		'ftbdripper:water_bowl',
-		'tconstruct:potion_bucket',
 		'supplementaries:ash',
 		'ag_day_counter:calendar_item',
 		/^minecraft:infested_/,
