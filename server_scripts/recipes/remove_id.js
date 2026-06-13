@@ -3,6 +3,9 @@ onEvent('recipes', event => {
 	event.remove([
 		{id: 'tfc_ie_addon:crusher/sulfur'},
 		{id: 'mekanism:processing/fluorite/from_block'},
+		// remove original water flask repair recipes
+		{id: /waterflasks:crafting\/repair_(leather|iron)/},
+        {id: /waterflasks:crafting\/repair_broken_(leather|iron)/},
 
 		// remove all copycat recipes to replace with our own
 		{id: /^copycats:crafting\/copycat_/},
