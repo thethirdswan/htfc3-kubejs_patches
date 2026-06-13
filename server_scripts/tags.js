@@ -270,7 +270,8 @@ onEvent('tags.items', event => {
 	])
 	
 	event.add('immersiveengineering:forbidden_in_crates', [
-		'#functionalstorage:drawer'
+		'#functionalstorage:drawer',
+		'toolbelt:belt'
 	])
 	
 	event.remove('forge:gravel', /^tfc:deposit/)
@@ -364,7 +365,7 @@ onEvent('tags.items', event => {
 		'supplementaries:pancake',
 		/^kubejs:prop_foods\//
 	])
-	event.add('tfc:compost_browns_low',['kubejs:misc_mats/ceramic_shards'])
+	event.add('tfc:compost_browns_low',['kubejs:misc_mats/ceramic_shards', 'tfc:straw'])
 	event.add('supplementaries:cookies', ['kubejs:prop_foods/cookie'])
 	event.remove('firmalife:foods/washable', 'firmalife:food/stinky_soup')
 	event.add('tfc:dynamic_bowl_items', 'firmalife:food/stinky_soup')
@@ -1016,6 +1017,8 @@ onEvent('tags.items', event => {
 	event.add('forge:double_sheets/lead', ['kubejs:metal/double_sheet/lead'])
 	event.add('tfc:metal_item/uranium', ['kubejs:metal/double_sheet/uranium'])
 	event.add('forge:double_sheets/uranium', ['kubejs:metal/double_sheet/uranium'])
+	event.add('tfc:metal_item/wrought_iron', ['kubejs:wrought_iron_spindle', 'kubejs:wrought_iron_spindle_head'])
+	event.add('tfc:metal_item/wrought_iron_tools', ['kubejs:wrought_iron_spindle'])
 	
 	event.add('tfc:firepit_fuel', [
 		'tfc:stick_bunch',
@@ -1822,6 +1825,7 @@ onEvent('tags.items', event => {
 		'dttfc:willow_seed'
 	]),
 	event.add('tfc:usable_on_tool_rack', [
+	    'kubejs:wrought_iron_spindle',
 		'kubejs:gravedigger',
 		'sewingkit:bone_sewing_needle',
 		'sewingkit:iron_sewing_needle',
@@ -2022,7 +2026,8 @@ onEvent('tags.items', event => {
 		'tfc:stone/shovel/sedimentary'
 	]),
 	event.add('forge:spindles', [
-		'tfc:spindle'
+		'tfc:spindle',
+		'kubejs:wrought_iron_spindle'
 	]),
 	event.add('tfc:tanned_hides', [
 		'kubejs:hide_tanned_s',

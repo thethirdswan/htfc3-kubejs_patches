@@ -49,6 +49,12 @@ onEvent('item.registry', event => {
 		.use((level, player, hand) => global.mopUse(level, player, hand))
 		.finishUsing((itemstack, level, player) => global.mopFinishUsing(itemstack, level, player))
 
+    event.create('wrought_iron_spindle').unstackable()
+        .displayName('Wrought Iron Spindle').maxDamage(2200)
+
+    event.create('wrought_iron_spindle_head').unstackable()
+        .displayName('Wrought Iron Spindle Head')
+
 	event.create('raw_cookie').food(food => { food.hunger(1).saturation(0) })//.eaten(ctx => {ctx.player.tell(Text.gold('Yummy Yummy!'))})})
 	event.create('silver_carrot').food(food => { food.hunger(1).saturation(0).alwaysEdible() })//.eaten(ctx => {ctx.player.tell(Text.gold('Silver works - Zombie - not today!'))})})
 	event.create('silver_apple').food(food => { food.hunger(1).saturation(0).alwaysEdible() })//.eaten(ctx => {ctx.player.tell(Text.gold('Silver works - Zombie - not today!'))})})

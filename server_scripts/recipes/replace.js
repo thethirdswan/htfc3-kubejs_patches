@@ -37,11 +37,13 @@ onEvent('recipes', event => {
 	event.replaceInput({type: 'minecraft:crafting_shaped'}, 'minecraft:composter', 'tfc:composter')
 	event.replaceInput({type: 'minecraft:crafting_shaped'}, 'mekanism:dust_charcoal', 'tfc:powder/charcoal')
 	event.replaceInput({type: 'minecraft:crafting_shaped'}, 'create:zinc_ingot', '#forge:ingots/zinc')
-	// general shapelles
+	// general shapeless
 	event.replaceInput({type: 'minecraft:crafting_shapeless'}, 'minecraft:glass_pane', 'tconstruct:clear_glass_pane')
 	event.replaceInput({type: 'minecraft:crafting_shapeless'}, 'minecraft:stone', '#tfc:rock/raw')
 	event.replaceInput({type: 'minecraft:crafting_shapeless'}, 'minecraft:sand', '#forge:sand')
 	event.replaceInput({type: 'minecraft:crafting_shapeless'}, 'minecraft:fishing_rod', '#forge:fishing_rods')
+	// tfc shapeless
+	event.replaceInput({type: 'tfc:advanced_shapeless_crafting'}, 'tfc:spindle', '#forge:spindles')
 	
 	//replace output
 	event.replaceOutput({}, 'minecraft:gold_ingot', 'tfc:metal/ingot/gold')
