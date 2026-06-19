@@ -8,7 +8,7 @@
     "amount": 125
   },
   "result": {
-    "item": "immersivepetroleum:petcoke_block"
+    "item": "immersiveengineering:coke"
   },
   "resultfluid": {
     "fluid": "immersivepetroleum:diesel_sulfur",

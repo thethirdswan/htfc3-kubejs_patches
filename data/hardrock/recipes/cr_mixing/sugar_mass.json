@@ -5,7 +5,7 @@
       "item": "tfc:food/sugarcane"
     },
     {
-      "fluid": "minecraft:water",
+      "fluid": "tfc:salt_water",
       "nbt": {},
       "amount": 250
     }
