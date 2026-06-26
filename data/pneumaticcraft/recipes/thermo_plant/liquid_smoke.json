@@ -1,0 +1,19 @@
+{
+  "type": "pneumaticcraft:thermo_plant",
+  "item_input": {
+    "item": "tfc:wood/log/hickory"
+  },
+  "fluid_input": {
+    "type": "pneumaticcraft:fluid",
+    "tag": "tfc:fresh_water",
+    "amount": 100
+  },
+  "fluid_output": {
+    "fluid": "kubejs:liquid_smoke",
+    "amount": 50
+  },
+  "temperature": {
+    "min_temp": 673
+  },
+  "exothermic": false
+}
