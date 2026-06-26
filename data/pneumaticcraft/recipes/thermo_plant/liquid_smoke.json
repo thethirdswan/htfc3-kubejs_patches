@@ -10,7 +10,7 @@
   },
   "fluid_output": {
     "fluid": "kubejs:liquid_smoke",
-    "amount": 50
+    "amount": 10
   },
   "temperature": {
     "min_temp": 673
