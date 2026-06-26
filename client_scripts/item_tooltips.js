@@ -698,7 +698,7 @@ onEvent('item.tooltip', tooltip => {
 	tooltip.addAdvanced('kubejs:magic_crystal', (item, advanced, text) => {
 		text.add(1, Text.gold('Used to create a portal to the Twilight Forest'))
 	})
-	tooltip.addAdvanced('kubejs:nutrimix', (item, advanced, text) => {
+	tooltip.addAdvanced('hardrock_mek_compat:nutrimix', (item, advanced, text) => {
 		text.add(1, Text.of('Not edible directly').gold())
 	})
 	tooltip.addAdvanced(['supplementaries:planter','supplementaries:planter_rich'], (item, advanced, text) => {

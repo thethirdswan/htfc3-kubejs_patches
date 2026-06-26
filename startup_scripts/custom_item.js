@@ -77,7 +77,6 @@ onEvent('item.registry', event => {
 	event.create('pile_carbon_waste').displayName('Pile of Carbon Waste')
 	event.create('pile_sulfur_waste').displayName('Pile of Sulfur Waste')
 	event.create('sulfur_waste').displayName('Dirty Sulfur Waste Dust')
-	event.create('nutrimix').displayName('Nutritional Mix')
 	event.create('feed_hay').displayName('Hay Feed')
 	event.create('feed_meat').displayName('Meat Feed')
 	event.create('feed_seed').displayName('Seed Feed')

@@ -99,16 +99,6 @@ onEvent('jei.information', event => {
 	event.add('minecraft:glowstone', [
 		"Sometimes found for sale on Amadron!"
 	])
-	event.add([
-		'kubejs:nutrimix',
-		'mekanism:nutritional_paste_bucket',
-		'mekanism:canteen',
-		'mekanism:module_nutritional_injection_unit'
-	], [
-		"Nutritional Paste is currently bugged and does not restore any saturation with TFC enabled.",
-		' ',
-		"For now, all recipes related to it are disabled until a compatibility mod becomes available."
-	])
 	event.add(/^minecraft:(?!.*dead).+_coral/, [
 		["Corals have two spawning requirements: being in a ", Text.of('Coral Reef biome').underlined(), ", and the average temperature being above ", Text.of('+10C').underlined(), '.'],
 		' ',
