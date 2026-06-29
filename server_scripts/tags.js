@@ -2394,6 +2394,20 @@ onEvent('tags.items', event => {
 	event.removeAll('tfc:cat_food')
 	event.add('tfc:cat_food', '#minecraft:fishes')
 	// ==========  REMOVE
+
+    event.remove('tfc:compost_greens_low', [
+        'tfc:plant/hanging_vines',
+        'tfc:plant/spanish_moss',
+        'tfc:plant/liana',
+        'tfc:plant/tree_fern',
+        'tfc:plant/arundo',
+        'tfc:plant/dry_phragmite',
+        'tfc:plant/ivy',
+        'tfc:plant/jungle_vines'
+    ])
+    event.remove('firmalife:oven_fuel', [
+        'myrtrees:rubberwood_log'
+    ])
 	event.remove('forge:nuggets', ['tinycoal:tinycoal','tinycoal:tinycharcoal'])
 	event.remove('balm:nuggets', ['tinycoal:tinycoal','tinycoal:tinycharcoal'])
 	event.remove('forge:storage_blocks/copper', ['minecraft:cut_copper'])
