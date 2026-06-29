@@ -143,7 +143,7 @@ onEvent('block.break', event => {
 			|| event.block.entityData?.inventory?.Items
 
 		storage.forEach(stack => {
-			if (!stack.ForgeCaps) event.block.popItem(Item.of(stack.id, stack.Count, stack.Tag))
+			if (!stack.ForgeCaps) event.block.popItem(Item.of(stack.id, stack.Count, stack.tag))
 			else {   // Manual pop that lets us assign ForgeCaps data
 				let itemEntity = event.level.createEntity('item')
 				itemEntity.fullNBT = `{Item:${stack}}`
