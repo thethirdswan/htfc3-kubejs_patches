@@ -1,7 +1,7 @@
 {
   "type": "pneumaticcraft:thermo_plant",
   "item_input": {
-    "item": "tfc:wood/log/hickory"
+    "tag": "tfc:makes_tannin"
   },
   "fluid_input": {
     "type": "pneumaticcraft:fluid",
