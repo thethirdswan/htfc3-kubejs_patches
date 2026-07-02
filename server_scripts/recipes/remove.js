@@ -280,7 +280,7 @@ onEvent('recipes', event => {
 		'mekanism:precision_sawmill',
 		'mekanism:cardboard_box',
 		'mekanism:nutritional_liquifier',
-		//'mekanism:module_nutritional_injection_unit',
+		'mekanism:module_nutritional_injection_unit',
 		'sewingkit:wood_sewing_needle',
 		'sewingkit:stone_sewing_needle',
 		'sewingkit:gold_sewing_needle',
