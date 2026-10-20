@@ -1,46 +1,47 @@
 const $ForgeSpawnEggItem = java('net.minecraftforge.common.ForgeSpawnEggItem')
 
 onEvent('block.right_click', event => {
-    const cakes = [
-        'createaddition:chocolate_cake',
-        'createaddition:honey_cake',
-        'tconstruct:ender_cake',
-        'tconstruct:magma_cake',
-        'tconstruct:earth_cake',
-        'tconstruct:sky_cake',
-        'tconstruct:blood_cake'
-    ]
+	const cakes = [
+		'createaddition:chocolate_cake',
+		'createaddition:honey_cake',
+		'tconstruct:ender_cake',
+		'tconstruct:magma_cake',
+		'tconstruct:earth_cake',
+		'tconstruct:sky_cake',
+		'tconstruct:blood_cake'
+	]
+	const cakeSliceIdFromWholeCake = (cakeBlockId) => {
+		const cakeType = cakeBlockId.slice(cakeBlockId.search(':') + 1).replace('_cake', '')
+		return `kubejs:cake_slices/${cakeType}`
+	}
 	// Enables cutting these cakes above when they're placed in the world with a knife, the same way as the coffee cake
-    cakes.forEach((cake) => {
-        if (event.block.id == cake) {
-			event.cancel()
-            if (event.item.hasTag('forge:tools/knives')) {
-                let cuts = Number(event.block.properties.bites)
-				cuts++
-                event.player.give('kubejs' + cake.slice(cake.search(':')) + '_slice')
-				if (cuts >= 7) {
-					event.block.set('air')
-				} else {
-					event.block.set(cake, {
-						'bites': `${cuts}`
-					})
-				}
-            }
-        }
-    })
+	if (cakes.includes(event.block.id)) {
+		event.cancel() // Don't eat them directly
+
+		if (event.item.hasTag('forge:tools/knives')) { // Grab a slice
+			let bites = Number(event.block.properties.bites)
+			bites++
+			event.player.give(cakeSliceIdFromWholeCake(event.block.id))
+			if (bites >= 7) {
+				event.block.set('air') // yum
+			} else {
+				event.block.set(event.block.id, { 'bites': `${bites}` })
+			}
+		}
+	}
 
 	// Allow lighting torches from blaze burners
 	if ((event.block.id == 'create:blaze_burner' || event.block.id == 'createaddition:liquid_blaze_burner')
 		&& event.item.id == 'tfc:dead_torch') {
-			event.cancel() // Cancel usual interactions, mainly placing the torch
-			if (event.block.properties.blaze == 'smouldering') {
-				event.player.setStatusMessage('This Blaze Burner is not fueled!')
-				return
-			}
-			let torchCount = event.item.count
-			event.item.count = 0
-			event.player.giveInHand(`${torchCount}x tfc:torch`)
-			event.player.server.runCommandSilent(`execute as ${event.player} at @s run playsound minecraft:entity.blaze.shoot block @a ~ ~ ~ ${0.25 + torchCount/48} ${1.5 + Math.random()/2}`)
+		event.cancel() // Cancel usual interactions, mainly placing the torch
+		if (event.block.properties.blaze == 'smouldering') {
+			event.player.setStatusMessage('This Blaze Burner is not fueled!')
+			return
+		}
+		let torchCount = event.item.count
+		event.item.count = 0
+		event.player.giveInHand(`${torchCount}x tfc:torch`)
+		event.player.server.runCommandSilent(`execute as ${event.player} at @s run playsound minecraft:entity.blaze.shoot block @a ~ ~ ~ ${0.25 + torchCount/48} ${1.5 + Math.random()/2}`)
 	}
 
 	// Fix bug/exploit interaction with Fluid Drawers and fluid containers and make it impossible to upgrade them
@@ -93,13 +94,11 @@ onEvent('block.right_click', event => {
 	}
 	event.player.rayTrace().block
 })
-onEvent('player.inventory.opened', event => {
-	//console.log(event.inventoryContainer)
 
+onEvent('player.inventory.opened', event => {
 	// Last resort cases if blacklisted things still open a GUI despite failsafes
-	if (
-		/StatueBargainContainer/.test(event.inventoryContainer.toString())
-	) { event.player.closeInventory() }
+	if (/StatueBargainContainer/.test(event.inventoryContainer.toString()))
+		event.player.closeInventory()
 })
 
 onEvent('item.right_click', event => {
@@ -117,42 +116,32 @@ onEvent('item.right_click', event => {
 })
 
 onEvent('item.entity_interact', event => {
-	let egg = event.level.createEntity('item')
-			egg.x = event.target.x
-			egg.y = event.target.y
-			egg.z = event.target.z
-			egg.motionX = (Math.random() * 0.1) - 0.05
-			egg.motionY = 0.2
-			egg.motionZ = (Math.random() * 0.1) - 0.05
-
-	let feather = event.level.createEntity('item')
-			feather.setItem(Item.of('minecraft:feather', 4))
-			feather.x = event.target.x
-			feather.y = event.target.y
-			feather.z = event.target.z
-			feather.motionX = (Math.random() * 0.1) - 0.05
-			feather.motionY = 0.2
-			feather.motionZ = (Math.random() * 0.1) - 0.05
-
-	if (event.target.type == 'tfc:chicken' && (event.item.id == 'mob_grinding_utils:gm_chicken_feed_cursed' || event.item.id == 'mob_grinding_utils:nutritious_chicken_feed' || event.item.id == 'mob_grinding_utils:gm_chicken_feed')) {
+	// Grinding Utils chicken feeds
+	if (event.target.type == 'tfc:chicken') {
 		if (event.target.fullNBT.gender != 0 || event.target.fullNBT.Age < 0 || event.target.fullNBT.oldDay > -1) return
-		if (event.item.id == 'mob_grinding_utils:gm_chicken_feed_cursed') {
-			egg.setItem(Item.of('mob_grinding_utils:rotten_egg'))
-		} else if (event.item.id == 'mob_grinding_utils:nutritious_chicken_feed') {
-			egg.setItem(Item.of('mob_grinding_utils:golden_egg'))
-		} else if (event.item.id == 'mob_grinding_utils:gm_chicken_feed') {
-			egg.setItem(Item.of($ForgeSpawnEggItem.fromEntityType(event.item.nbt.mguMobName)))
-		}
+
+		let eggToSpawn
+		if (event.item.id == 'mob_grinding_utils:gm_chicken_feed_cursed')
+			eggToSpawn = Item.of('mob_grinding_utils:rotten_egg')
+		else if (event.item.id == 'mob_grinding_utils:nutritious_chicken_feed')
+			eggToSpawn = Item.of('mob_grinding_utils:golden_egg')
+		else if (event.item.id == 'mob_grinding_utils:gm_chicken_feed')
+			eggToSpawn = Item.of($ForgeSpawnEggItem.fromEntityType(event.item.nbt.mguMobName))
+		else
+			return // Not a chicken feed
+
 		if (!event.player.isCreativeMode) event.item.count--
+
 		event.player.server.runCommandSilent(`execute as ${event.player} at ${event.target.id} run particle minecraft:explosion ~ ~ ~`)
 		event.player.server.runCommandSilent(`execute as ${event.player} at @s run playsound minecraft:entity.item.pickup block @a ~ ~ ~ 100 ${1.5 + Math.random()/2}`)
-		egg.spawn()
-		feather.spawn()
+		event.target.minecraftLivingEntity.spawnAtLocation(eggToSpawn)
+		event.target.minecraftLivingEntity.spawnAtLocation(Item.of('minecraft:feather', 1 + Math.round(2 * Math.random())))
 		event.target.remove()
 	}
 })
 
 onEvent('item.food_eaten', event => {
+	// Fix greedy player chewing down pie pans
 	if (['minecraft:pumpkin_pie', 'firmalife:food/cooked_pie'].includes(event.item.id)) {
 		event.player.giveInHand('firmalife:pie_pan')
 	}
