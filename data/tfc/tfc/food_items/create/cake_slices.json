@@ -1,7 +1,9 @@
 {
-  "ingredient": {
-    "item": "kubejs:cake_slices/honey"
-  },
+  "ingredient": [
+    {
+      "tag": "create:cake_slices"
+    }
+  ],
   "hunger": 2,
   "saturation": 2,
   "decay_modifier": 1.5,

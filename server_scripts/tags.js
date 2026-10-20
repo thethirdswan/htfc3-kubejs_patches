@@ -1538,8 +1538,6 @@ onEvent('tags.items', event => {
 		'create:sweet_roll',
 		'create:chocolate_glazed_berries',
 		'create:honeyed_apple',
-		'createaddition:chocolate_cake',
-		'createaddition:honey_cake',
 		'createaddition:cake_base',
 		'createaddition:cake_base_baked',
 		'farmersrespite:coffee_berries',
@@ -1607,19 +1605,33 @@ onEvent('tags.items', event => {
 		'untamedwilds:food_bear_cooked',
 		'untamedwilds:food_turtle_cooked',
 		'untamedwilds:food_pachyderm_cooked',
-		'kubejs:cake_slices/chocolate',
-		'kubejs:cake_slices/honey',
-		'kubejs:cake_slices/sky',
-		'kubejs:cake_slices/earth',
-		'kubejs:cake_slices/magma',
-		'kubejs:cake_slices/blood',
-		'kubejs:cake_slices/ender',
+		'#tconstruct:cakes',
+		'#tconstruct:cake_slices',
+		'#create:cakes',
+		'#create:cake_slices'
+	]),
+	event.add('tconstruct:cakes', [
 		'tconstruct:earth_cake',
 		'tconstruct:sky_cake',
 		'tconstruct:magma_cake',
 		'tconstruct:blood_cake',
 		'tconstruct:ender_cake'
-	]),
+	])
+	event.add('tconstruct:cake_slices', [
+		'kubejs:cake_slices/sky',
+		'kubejs:cake_slices/earth',
+		'kubejs:cake_slices/magma',
+		'kubejs:cake_slices/blood',
+		'kubejs:cake_slices/ender'
+	])
+	event.add('create:cakes', [
+		'createaddition:chocolate_cake',
+		'createaddition:honey_cake'
+	])
+	event.add('create:cake_slices', [
+		'kubejs:cake_slices/chocolate',
+		'kubejs:cake_slices/honey'
+	])
 	event.add('tfc:foods/meats', [
 		'kubejs:shark_meat',
 		'kubejs:shark_cooked_meat',

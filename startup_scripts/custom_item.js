@@ -1,57 +1,14 @@
 // priority: 0
 
 console.info('Registering KJS Items...')
-const cakes = [
-    {
-        name: 'chocolate',
-        effects: []
-    },
-    {
-        name: 'honey',
-        effects: []
-    },
-    {
-        name: 'ender',
-        effects: []
-    },
-    {
-        name: 'magma',
-        effects: [
-            {
-                name: 'fire_resistance',
-                duration: 500
-            }
-        ]
-    },
-    {
-        name: 'earth',
-        effects: [
-            {
-                name: 'luck',
-                duration: 200
-            },
-            {
-                name: 'slowness',
-                duration: 120
-            }
-            ]
-    },
-    {
-        name: 'sky',
-        effects: [
-            {
-                name: 'jump_boost',
-                duration: 240
-            },
-            {
-                name:'slowness',
-                duration: 120
-            }]
-    },
-    {
-        name: 'blood',
-        effects: [{ name: 'mining_fatigue', duration: 80 }]
-    },
+const cakes = [ // Effect durations are in seconds
+    { name: 'chocolate', effects: [] },
+    { name: 'honey',     effects: [] },
+    { name: 'ender',     effects: [] },
+    { name: 'magma',     effects: [ { name: 'fire_resistance', duration: 25 } ] },
+    { name: 'earth',     effects: [ { name: 'luck',            duration: 10 }, { name: 'slowness', duration: 6 } ] },
+    { name: 'sky',       effects: [ { name: 'jump_boost',      duration: 12 }, { name: 'slowness', duration: 6 } ] },
+    { name: 'blood',     effects: [ { name: 'mining_fatigue',  duration: 4  } ] },
 ]
 
 onEvent('item.registry', event => {
@@ -202,16 +159,16 @@ onEvent('item.registry', event => {
 	event.create('img_wiki').displayName('img_wiki')
 	event.create('img_book').displayName('img_book')
 	cakes.forEach((cake) =>
-	event.create('cake_slices/' + cake.name)
-	    .displayName(cake.name.slice(0, 1).toUpperCase() + cake.name.slice(1) + ' Cake Slice') // heh, cake.slice
-	    .food(food => {
-	        food.hunger(2).saturation(2)
-	        if (cake.effects) {
-	            cake.effects.forEach((potionEffect) => {
-	                food.effect(potionEffect.name, potionEffect.duration, 0, 1)
-	            })
-	        }
-	    })
+        event.create('cake_slices/' + cake.name)
+            .displayName(cake.name.slice(0, 1).toUpperCase() + cake.name.slice(1) + ' Cake Slice') // heh, cake.slice
+            .food(food => {
+                food.hunger(2).saturation(2)
+                if (cake.effects) {
+                    cake.effects.forEach((potionEffect) => {
+                        food.effect(potionEffect.name, potionEffect.duration * 20, 0, 1)
+                    })
+                }
+            })
 	)
 })
 
