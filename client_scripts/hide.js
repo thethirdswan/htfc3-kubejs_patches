@@ -1,7 +1,7 @@
 // priority: 20
 
 onEvent('jei.remove.categories', event => {
-    event.remove('minecraft:smoking')
+	event.remove('minecraft:smoking')
 })
 onEvent('jei.hide.fluids', event => {
 	// Hiding fluids does not seem to work very well with an array, for some reason
@@ -28,8 +28,8 @@ onEvent('jei.hide.fluids', event => {
 })
 onEvent('jei.hide.items', event => {
 	event.hide([
-	    Item.of('tconstruct:potion_bucket').ignoreNBT(),
-	    Item.of('immersiveengineering:potion_bucket').ignoreNBT(),
+		Item.of('tconstruct:potion_bucket').ignoreNBT(),
+		Item.of('immersiveengineering:potion_bucket').ignoreNBT(),
 		/^mcw_tfc_aio:bridges\/bamboo_bridges/,
 		'mcw_tfc_aio:fences/other_fences/bamboo_fence',
 		'createoreexcavation:raw_diamond',

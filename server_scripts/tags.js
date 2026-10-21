@@ -203,23 +203,23 @@ onEvent('tags.blocks', event => {
 
 	event.add('adpother:pollution_passthrough', [
 		'#minecraft:carpets',
-    	'#minecraft:trapdoors',
-    	'#forge:thatch',
-    	'#minecraft:signs',
-    	'#immersiveengineering:scaffoldings/aluminum',
-    	'#immersiveengineering:scaffoldings/steel',
-    	'#immersiveengineering:scaffolding_slabs/aluminum',
-    	'#immersiveengineering:scaffolding_stairs/aluminum',
-    	'#immersiveengineering:scaffolding_slabs/steel',
-    	'#immersiveengineering:scaffolding_stairs/steel',
-    	'createdeco:zinc_catwalk',
-    	'createdeco:copper_catwalk',
-    	'createdeco:iron_catwalk',
-    	'createdeco:cast_iron_catwalk',
-    	'createdeco:brass_catwalk',
-    	'createdeco:andesite_catwalk',
-    	'createdeco:netherite_catwalk',
-    	'createdeco:gold_catwalk',
+		'#minecraft:trapdoors',
+		'#forge:thatch',
+		'#minecraft:signs',
+		'#immersiveengineering:scaffoldings/aluminum',
+		'#immersiveengineering:scaffoldings/steel',
+		'#immersiveengineering:scaffolding_slabs/aluminum',
+		'#immersiveengineering:scaffolding_stairs/aluminum',
+		'#immersiveengineering:scaffolding_slabs/steel',
+		'#immersiveengineering:scaffolding_stairs/steel',
+		'createdeco:zinc_catwalk',
+		'createdeco:copper_catwalk',
+		'createdeco:iron_catwalk',
+		'createdeco:cast_iron_catwalk',
+		'createdeco:brass_catwalk',
+		'createdeco:andesite_catwalk',
+		'createdeco:netherite_catwalk',
+		'createdeco:gold_catwalk',
 		/^mcwbridges/,
 		/^mcw_tfc_aio:bridges/
 	])
@@ -316,23 +316,23 @@ onEvent('tags.items', event => {
 	//])
 	event.add('adpother:pollution_passthrough', [
 		'#minecraft:carpets',
-        '#minecraft:trapdoors',
-        '#forge:thatch',
-        '#minecraft:signs',
-        '#immersiveengineering:scaffoldings/aluminum',
-        '#immersiveengineering:scaffoldings/steel',
-        '#immersiveengineering:scaffolding_slabs/aluminum',
-        '#immersiveengineering:scaffolding_stairs/aluminum',
-        '#immersiveengineering:scaffolding_slabs/steel',
-        '#immersiveengineering:scaffolding_stairs/steel',
-        'createdeco:zinc_catwalk',
-        'createdeco:copper_catwalk',
-        'createdeco:iron_catwalk',
-        'createdeco:cast_iron_catwalk',
-        'createdeco:brass_catwalk',
-        'createdeco:andesite_catwalk',
-        'createdeco:netherite_catwalk',
-        'createdeco:gold_catwalk',
+		'#minecraft:trapdoors',
+		'#forge:thatch',
+		'#minecraft:signs',
+		'#immersiveengineering:scaffoldings/aluminum',
+		'#immersiveengineering:scaffoldings/steel',
+		'#immersiveengineering:scaffolding_slabs/aluminum',
+		'#immersiveengineering:scaffolding_stairs/aluminum',
+		'#immersiveengineering:scaffolding_slabs/steel',
+		'#immersiveengineering:scaffolding_stairs/steel',
+		'createdeco:zinc_catwalk',
+		'createdeco:copper_catwalk',
+		'createdeco:iron_catwalk',
+		'createdeco:cast_iron_catwalk',
+		'createdeco:brass_catwalk',
+		'createdeco:andesite_catwalk',
+		'createdeco:netherite_catwalk',
+		'createdeco:gold_catwalk',
 		/^mcwbridges/,
 		/^mcw_tfc_aio:bridges/
 	])
@@ -492,7 +492,6 @@ onEvent('tags.items', event => {
 		'supplementaries:pancake',
 		/^kubejs:prop_foods\//
 	])
-	event.add('tfc:compost_browns_low',['kubejs:misc_mats/ceramic_shards', 'tfc:straw'])
 	event.add('supplementaries:cookies', ['kubejs:prop_foods/cookie'])
 	event.remove('firmalife:foods/washable', 'firmalife:food/stinky_soup')
 	event.add('tfc:dynamic_bowl_items', 'firmalife:food/stinky_soup')
@@ -670,15 +669,15 @@ onEvent('tags.items', event => {
 		'#tfc:ores/metals/iron/magnetite',
 		'#tfc:ores/metals/iron/limonite'
 	])
-	event.add('tfc:ores/metals/gold',     ['#tfc:ores/metals/native_gold'])
+	event.add('tfc:ores/metals/gold',	 ['#tfc:ores/metals/native_gold'])
 	event.add('tfc:ores/metals/silver',   ['#tfc:ores/metals/native_silver'])
-	event.add('tfc:ores/metals/tin',      ['#tfc:ores/metals/cassiterite'])
+	event.add('tfc:ores/metals/tin',	  ['#tfc:ores/metals/cassiterite'])
 	event.add('tfc:ores/metals/bismuth',  ['#tfc:ores/metals/bismuthinite'])
 	event.add('tfc:ores/metals/nickel',  ['#tfc:ores/metals/garnierite'])
-	event.add('tfc:ores/metals/zinc',     ['#tfc:ores/metals/sphalerite'])
+	event.add('tfc:ores/metals/zinc',	 ['#tfc:ores/metals/sphalerite'])
 	event.add('tfc:ores/metals/chromium', ['#tfc:ores/metals/chromite'])
 	event.add('tfc:ores/metals/aluminum', ['#tfc:ores/metals/bauxite'])
-	event.add('tfc:ores/metals/lead',     ['#tfc:ores/metals/galena'])
+	event.add('tfc:ores/metals/lead',	 ['#tfc:ores/metals/galena'])
 	event.add('tfc:ores/metals/uranium',  ['#tfc:ores/metals/uraninite'])
 	event.add('tfc:ores/metals', [
 		'#tfc:ores/metals/copper/native_copper',
@@ -762,15 +761,15 @@ onEvent('tags.items', event => {
 		'#tfc:ore_pieces/metals/iron/magnetite',
 		'#tfc:ore_pieces/metals/iron/limonite'
 	])
-	event.add('tfc:ore_pieces/metals/gold',     ['#tfc:ore_pieces/metals/native_gold'])
+	event.add('tfc:ore_pieces/metals/gold',	 ['#tfc:ore_pieces/metals/native_gold'])
 	event.add('tfc:ore_pieces/metals/silver',   ['#tfc:ore_pieces/metals/native_silver'])
-	event.add('tfc:ore_pieces/metals/tin',      ['#tfc:ore_pieces/metals/cassiterite'])
+	event.add('tfc:ore_pieces/metals/tin',	  ['#tfc:ore_pieces/metals/cassiterite'])
 	event.add('tfc:ore_pieces/metals/bismuth',  ['#tfc:ore_pieces/metals/bismuthinite'])
 	event.add('tfc:ore_pieces/metals/nickel',  ['#tfc:ore_pieces/metals/garnierite'])
-	event.add('tfc:ore_pieces/metals/zinc',     ['#tfc:ore_pieces/metals/sphalerite'])
+	event.add('tfc:ore_pieces/metals/zinc',	 ['#tfc:ore_pieces/metals/sphalerite'])
 	event.add('tfc:ore_pieces/metals/chromium', ['#tfc:ore_pieces/metals/chromite'])
 	event.add('tfc:ore_pieces/metals/aluminum', ['#tfc:ore_pieces/metals/bauxite'])
-	event.add('tfc:ore_pieces/metals/lead',     ['#tfc:ore_pieces/metals/galena'])
+	event.add('tfc:ore_pieces/metals/lead',	 ['#tfc:ore_pieces/metals/galena'])
 	event.add('tfc:ore_pieces/metals/uranium',  ['#tfc:ore_pieces/metals/uraninite'])
 	event.add('tfc:ore_pieces/metals', [
 		'#tfc:ore_pieces/metals/copper/native_copper',
@@ -1255,7 +1254,8 @@ onEvent('tags.items', event => {
 	//event.remove('forge:tools/saws', '#forge:tools/axes')
 	//event.add('forge:saw_blade', 'immersiveengineering:sawblade')
 	event.add('forge:press_head', 'kubejs:press_head')
-	event.add('tfc:compost_browns_low', ['mekanism:bio_fuel'])
+	event.add('tfc:compost_browns_low', ['tfc:straw', 'mekanism:bio_fuel'])
+	event.add('tfc:compost_browns-high', ['kubejs:misc_mats/ceramic_shards'])
 	event.add('tfc:compost_greens_low', ['kubejs:seed_biomass'])
 	event.add('tfc:compost_greens', ['createaddition:biomass'])
 	event.add('forge:barrels', '#tfcbarrels:barrels')
@@ -1981,7 +1981,7 @@ onEvent('tags.items', event => {
 		'dttfc:willow_seed'
 	]),
 	event.add('tfc:usable_on_tool_rack', [
-	    'kubejs:wrought_iron_spindle',
+		'kubejs:wrought_iron_spindle',
 		'kubejs:gravedigger',
 		'sewingkit:bone_sewing_needle',
 		'sewingkit:iron_sewing_needle',
@@ -2549,19 +2549,19 @@ onEvent('tags.items', event => {
 	event.add('tfc:cat_food', '#minecraft:fishes')
 	// ==========  REMOVE
 
-    event.remove('tfc:compost_greens_low', [
-        'tfc:plant/hanging_vines',
-        'tfc:plant/spanish_moss',
-        'tfc:plant/liana',
-        'tfc:plant/tree_fern',
-        'tfc:plant/arundo',
-        'tfc:plant/dry_phragmite',
-        'tfc:plant/ivy',
-        'tfc:plant/jungle_vines'
-    ])
-    event.remove('firmalife:oven_fuel', [
-        'myrtrees:rubberwood_log'
-    ])
+	event.remove('tfc:compost_greens_low', [
+		'tfc:plant/hanging_vines',
+		'tfc:plant/spanish_moss',
+		'tfc:plant/liana',
+		'tfc:plant/tree_fern',
+		'tfc:plant/arundo',
+		'tfc:plant/dry_phragmite',
+		'tfc:plant/ivy',
+		'tfc:plant/jungle_vines'
+	])
+	event.remove('firmalife:oven_fuel', [
+		'myrtrees:rubberwood_log'
+	])
 	event.remove('forge:nuggets', ['tinycoal:tinycoal','tinycoal:tinycharcoal'])
 	event.remove('balm:nuggets', ['tinycoal:tinycoal','tinycoal:tinycharcoal'])
 	event.remove('forge:storage_blocks/copper', ['minecraft:cut_copper'])
@@ -2585,57 +2585,57 @@ onEvent('tags.items', event => {
 		'untamedwilds:hide_bigcat_tiger'
 	])
 /*  event.remove('tfc:cat_food', [  // didn't work for whatever reason
-    'tfc:food/barley_grain',
-    'tfc:food/maize_grain',
-    'tfc:food/oat_grain',
-    'tfc:food/rye_grain',
-    'tfc:food/rice_grain',
-    'tfc:food/wheat_grain',
-    'tfc:food/cooked_beef',
-    'tfc:food/cooked_pork',
-    'tfc:food/cooked_chicken',
-    'tfc:food/cooked_quail',
-    'tfc:food/cooked_mutton',
-    'tfc:food/cooked_bear',
-    'tfc:food/cooked_horse_meat',
-    'tfc:food/cooked_pheasant',
-    'tfc:food/cooked_turkey',
-    'tfc:food/cooked_grouse',
-    'tfc:food/cooked_venison',
-    'tfc:food/cooked_wolf',
-    'tfc:food/cooked_rabbit',
-    'tfc:food/cooked_hyena',
-    'tfc:food/cooked_duck',
-    'tfc:food/cooked_chevon',
-    'tfc:food/cooked_camelidae',
-    'tfc:food/cooked_gran_feline',
-    'tfc:food/cooked_turtle',
-    'twilightforest:cooked_venison',
-    'twilightforest:cooked_meef',
-    'untamedwilds:food_bear_cooked',
-    'untamedwilds:food_turtle_cooked',
-    'untamedwilds:food_pachyderm_cooked',
-    'farmersdelight:beef_patty',
-    'farmersdelight:cooked_bacon',
-    'farmersdelight:cooked_mutton_chops',
-    'farmersdelight:smoked_ham',
-    'firmalife:food/yak_curd',
-    'firmalife:food/goat_curd',
-    'firmalife:food/milk_curd',
-    'firmalife:food/cooked_bacon',
-    'firmalife:food/cheddar',
-    'firmalife:food/chevre',
-    'firmalife:food/rajya_metok',
-    'firmalife:food/gouda',
-    'firmalife:food/feta',
-    'firmalife:food/shosha',
-    'firmalife:food/shredded_cheese',
-    'firmalife:food/white_chocolate_blend',
-    'firmalife:food/dark_chocolate_blend',
-    'firmalife:food/milk_chocolate_blend',
-    'htm:cooked_poultry_wing',
-    'htm:cooked_poultry_leg',
-    'htm:cooked_poultry_breast'
+	'tfc:food/barley_grain',
+	'tfc:food/maize_grain',
+	'tfc:food/oat_grain',
+	'tfc:food/rye_grain',
+	'tfc:food/rice_grain',
+	'tfc:food/wheat_grain',
+	'tfc:food/cooked_beef',
+	'tfc:food/cooked_pork',
+	'tfc:food/cooked_chicken',
+	'tfc:food/cooked_quail',
+	'tfc:food/cooked_mutton',
+	'tfc:food/cooked_bear',
+	'tfc:food/cooked_horse_meat',
+	'tfc:food/cooked_pheasant',
+	'tfc:food/cooked_turkey',
+	'tfc:food/cooked_grouse',
+	'tfc:food/cooked_venison',
+	'tfc:food/cooked_wolf',
+	'tfc:food/cooked_rabbit',
+	'tfc:food/cooked_hyena',
+	'tfc:food/cooked_duck',
+	'tfc:food/cooked_chevon',
+	'tfc:food/cooked_camelidae',
+	'tfc:food/cooked_gran_feline',
+	'tfc:food/cooked_turtle',
+	'twilightforest:cooked_venison',
+	'twilightforest:cooked_meef',
+	'untamedwilds:food_bear_cooked',
+	'untamedwilds:food_turtle_cooked',
+	'untamedwilds:food_pachyderm_cooked',
+	'farmersdelight:beef_patty',
+	'farmersdelight:cooked_bacon',
+	'farmersdelight:cooked_mutton_chops',
+	'farmersdelight:smoked_ham',
+	'firmalife:food/yak_curd',
+	'firmalife:food/goat_curd',
+	'firmalife:food/milk_curd',
+	'firmalife:food/cooked_bacon',
+	'firmalife:food/cheddar',
+	'firmalife:food/chevre',
+	'firmalife:food/rajya_metok',
+	'firmalife:food/gouda',
+	'firmalife:food/feta',
+	'firmalife:food/shosha',
+	'firmalife:food/shredded_cheese',
+	'firmalife:food/white_chocolate_blend',
+	'firmalife:food/dark_chocolate_blend',
+	'firmalife:food/milk_chocolate_blend',
+	'htm:cooked_poultry_wing',
+	'htm:cooked_poultry_leg',
+	'htm:cooked_poultry_breast'
   ]) */
 	event.removeAllTagsFrom(
 		'minecraft:turtle_egg',
