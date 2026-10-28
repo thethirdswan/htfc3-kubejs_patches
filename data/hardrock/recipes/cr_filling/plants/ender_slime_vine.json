@@ -1,11 +1,12 @@
 {
-  "type": "create:item_application",
+  "type": "create:filling",
   "ingredients": [
     {
       "item": "tfc:plant/jungle_vines"
     },
     {
-      "item": "tconstruct:ender_slime_grass_seeds"
+      "fluid": "tconstruct:ender_slime",
+      "amount": 125
     }
   ],
   "results": [
